@@ -3,6 +3,7 @@ import AnswersItem from "./AnswersItem";
 export default function AnswersList(props) {
   console.log("Inside AnswersList: ", props);
 
+  // eslint-disable-next-line react/prop-types
   const { answersList } = props;
 
   return (
@@ -13,3 +14,4 @@ export default function AnswersList(props) {
     </ul>
   );
 }
+
