@@ -4,8 +4,6 @@ import AnswersList from "./AnswersList";
 function Survey() {
   const [open, setOpen] = useState(false); //Ignore this state
 
-  const listOfAnswers = []
-
   const startState = {
     colour: "",
     spendTime: [],
@@ -13,6 +11,8 @@ function Survey() {
     username: "",
     email: ""
   }
+
+  const [listOfAnswers, setListOfAnswers] = useState([])
 
   const [formData, setFormData] = useState(startState);
 
@@ -51,7 +51,7 @@ const setValueCheck = (event) => {
     <main className="survey">
       <section className={`survey__list ${open ? "open" : ""}`}>
         <h2>Answers list</h2>
-        {/* answers should go here */}
+        <AnswersList props={listOfAnswers} />
       </section>
       <section className="survey__form">
         <form className="form" onSubmit={submitForm}>
